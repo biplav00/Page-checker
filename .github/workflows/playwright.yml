@@ -39,7 +39,7 @@ jobs:
       #     PASSWORD: ${{ secrets.PASSWORD }}
 
       - name: Run Playwright Tests
-        run: npx playwright test --workers=auto
+        run: npx playwright test --workers=10
 
       - name: Upload Playwright Report
         if: always()
