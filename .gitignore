@@ -1,0 +1,14 @@
+# Dependencies
+/node_modules
+
+# Auth
+/auth/auth_token.json
+
+# Data
+/data/invalid_links.csv
+/data/valid_links.csv
+
+# Playwright reports
+/playwright-report/
+/test-results/
+/screenshots
