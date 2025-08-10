@@ -12,9 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: latest
-        # You can add browsers here if you want multi-browser testing
-        # browser: [chromium, firefox, webkit]
+        node-version: [latest]
 
     steps:
       - uses: actions/checkout@v3
@@ -22,7 +20,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: latest
+          node-version: ${{ matrix['node-version'] }}
 
       - name: Install dependencies
         run: npm ci
@@ -33,6 +31,7 @@ jobs:
       - name: Create auth directory
         run: mkdir -p auth
 
+      # Uncomment if you have auth script & secrets configured
       # - name: Authenticate and store token
       #   run: node set-token.js
       #   env:
